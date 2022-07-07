@@ -1,8 +1,69 @@
-*{
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
-body{
-    box-sizing: border-box;
-    background: #FFFFFF;
+body {
+  box-sizing: border-box;
+  background: #ffffff;
+}
+.hidden {
+  display: none;
+}
+.photo {
+  height: 58px;
+  width: 58px;
+  background-color: #ededed;
+  border-radius: 50%;
+  float: left;
+  margin-right: 16px;
+  text-align: center;
+  display: block;
+}
+.photo svg {
+  width: 34px;
+  height: 45px;
+  overflow: hidden;
+  text-align: center;
+  border-collapse: collapse;
+  margin-top: 5px;
+  color: lightgray;
+}
+
+
+aside h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  line-height: 1;
+  display: block;
+}
+aside p {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.45);
+  margin: 0;
+  line-height: 1.14;
+  display: block;
+}
+
+ul{
+    text-decoration: none;
+    color: rgb(64, 64, 64);
+    background-color: transparent;
+    min-height: 48px;
+    display: flex;
+    position: relative;
+    padding: 0px 16px;
+    width: 100%;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    gap: 8px 0px;
+    border-radius: 4px;
+}
+
+.sideContainer{
+    padding: 0px 8px;
 }
