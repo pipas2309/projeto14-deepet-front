@@ -58,7 +58,6 @@ export default function Header() {
       </SideBar>
       <div
         className={`overlay ${!side ? "hidden" : ""}`}
-        visibility={side?"visible":"hidden"}
         onClick={toggleSide}
       ></div>
     </HeaderBox>
