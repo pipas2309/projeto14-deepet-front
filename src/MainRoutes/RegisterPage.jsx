@@ -10,13 +10,14 @@ export default function RegisterPage() {
   const navigate = useNavigate();
   return (
     <Main>
-      <IoChevronBackCircleOutline onClick={() => navigate(-1)} />
+      <IoChevronBackCircleOutline className="back" onClick={() => navigate(-1)} />
       <img src={Logo} alt="Logo" />
       <h1>Cadastre-se</h1>
       <RegisterForms />
+      <Wall></Wall>
       <p>
         Já possui uma conta?{" "}
-        <Link to={"/register"}>
+        <Link to={"/login"}>
           <span> Faça login </span>
         </Link>
       </p>
@@ -32,7 +33,7 @@ const Main = styled.main`
   align-items: center;
   background: #f9fafb;
   padding-bottom: 100px;
-  svg {
+  .back {
     position: absolute;
     left: 20px;
     top: 20px;
@@ -62,6 +63,7 @@ const Main = styled.main`
     text-align: center;
     font-size: 14px;
     line-height: 16px;
+    margin-bottom:100px;
   }
   span {
     color: #fc6828;

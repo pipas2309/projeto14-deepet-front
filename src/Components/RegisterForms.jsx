@@ -77,26 +77,26 @@ export default function RegisterForms() {
     if (!v3) {
       setErrMsg("E-mail inválido, insira um e-mail válido");
     }
-//     try {
-//       const postObj={ user, email, pwd }
-//       const response = await axios.post(
-//         "https://mywalletlivison.herokuapp.com/register",
-//         postObj
-//       );
-//       setUser("");
-//       setPwd("");
-//       setMatchPwd("");
-//       navigate("/");
-//     } catch (err) {
-//       if (!err?.response) {
-//         setErrMsg("Sem resposta do servidor");
-//       } else if (err.response?.status === 409) {
-//         setErrMsg("Usuário cadastrado / Email Cadastrado");
-//       } else {
-//         setErrMsg("Falha no registro");
-//       }
-//       errRef.current.focus();
-//     }
+    try {
+      const postObj={ user, email, pwd }
+      const response = await axios.post(
+        "https://mywalletlivison.herokuapp.com/auth/sign-up",
+        postObj
+      );
+      setUser("");
+      setPwd("");
+      setMatchPwd("");
+      navigate("/");
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("Sem resposta do servidor");
+      } else if (err.response?.status === 409) {
+        setErrMsg("Usuário cadastrado / Email Cadastrado");
+      } else {
+        setErrMsg("Falha no registro");
+      }
+      errRef.current.focus();
+    }
   };
 
   return (
@@ -122,7 +122,7 @@ export default function RegisterForms() {
         onBlur={() => setUserFocus(false)}
         placeholder = "Nome"
       />
-      <p
+      <h4
         id="uidnote"
         className={
           userFocus && user && !validName ? "instructions" : "offscreen"
@@ -134,7 +134,7 @@ export default function RegisterForms() {
         Deve começar com uma letra.
         <br />
         Letras, números, underline, hífen permitidos.
-      </p>
+      </h4>
       <input
         type="email"
         id="email"
@@ -148,7 +148,7 @@ export default function RegisterForms() {
         onBlur={() => setEmailFocus(false)}
         placeholder = "E-mail"
       />
-      <p
+      <h4
         id="emailnote"
         className={
           emailFocus && email && !validEmail ? "instructions" : "offscreen"
@@ -156,7 +156,7 @@ export default function RegisterForms() {
       >
         <FaInfoCircle/>
         Deve ser um e-mail válido.
-      </p>
+      </h4>
       <input
         type="password"
         id="password"
@@ -169,7 +169,7 @@ export default function RegisterForms() {
         onBlur={() => setPwdFocus(false)}
         placeholder = "Senha"
       />
-      <p
+      <h4
         id="pwdnote"
         className={pwdFocus && !validPwd ? "instructions" : "offscreen"}
       >
@@ -179,7 +179,7 @@ export default function RegisterForms() {
         Deve incluir letras maiúscula e minúscula, um número e um caracter
         especial.
         <br />
-      </p>
+      </h4>
       <input
         type="password"
         id="confirm_pwd"
@@ -192,13 +192,13 @@ export default function RegisterForms() {
         onBlur={() => setMatchFocus(false)}
         placeholder = "Repita a senha"
       />
-      <p
+      <h4
         id="confirmnote"
         className={matchFocus && !validMatch ? "instructions" : "offscreen"}
       >
         <FaInfoCircle/>
         Ambas senhas devem ser iguais.
-      </p>
+      </h4>
       <button type="submit" disabled={!validName || !validPwd || !validMatch ? true : false}>{"Cadastrar"}</button>
     </Forms>
   );
@@ -211,7 +211,6 @@ const Forms = styled.form`
   justify-content: center;
   align-items: center;
   margin-top: 44px;
-
   input {
     width: 88%;
     height: 64px;
@@ -231,9 +230,9 @@ const Forms = styled.form`
       color: #A8AFB9;
     }
   }
-  p{
+  h4{
     margin-bottom:20px;
-    margin-top:-10px;
+    margin-top:-20px;
   }
   button {
     border: none;

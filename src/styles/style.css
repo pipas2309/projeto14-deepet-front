@@ -16,10 +16,11 @@ body {
   padding: 0.5rem;
 }
 .instructions {
+  width: 88%;
   font-size: 0.75rem;
   border-radius: 0.5rem;
-  background: #000;
-  color: #fff;
+  background:#FFF159;
+  color: black;
   padding: 0.25rem;
   position: relative;
   bottom: -10px;
