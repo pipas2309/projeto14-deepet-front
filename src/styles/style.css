@@ -6,8 +6,28 @@ body {
   box-sizing: border-box;
   background: #ffffff;
 }
-.hidden {
+.hidden,.hide {
   display: none;
+}
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+.instructions {
+  width: 88%;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  background:#FFF159;
+  color: black;
+  padding: 0.25rem;
+  position: relative;
+  bottom: -10px;
+}
+.offscreen {
+  position: absolute;
+  left: -9999px;
 }
 .photo {
   height: 58px;

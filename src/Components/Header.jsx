@@ -54,7 +54,10 @@ export default function Header() {
             <Link to={'/login'}>
               <div className="enterButton">Entre</div>
             </Link>
-            <div className="registerButton">Crie sua conta</div>
+            <Link to={'/register'}>
+              <div className="registerButton">Crie sua conta</div>
+            </Link>
+            
           </div>
         </SideBarHeader>
         <SideBarContent />

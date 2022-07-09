@@ -1,24 +1,24 @@
 import styled from "styled-components";
 import React from "react";
 import Logo from "../imgs/Logo.png";
-import LoginForms from "../Components/LoginForms";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+import RegisterForms from "../Components/RegisterForms";
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const navigate = useNavigate();
   return (
     <Main>
-      <IoChevronBackCircleOutline onClick={() => navigate(-1)} />
+      <IoChevronBackCircleOutline className="back" onClick={() => navigate(-1)} />
       <img src={Logo} alt="Logo" />
-      <h1>Entre na deepet</h1>
-      <LoginForms />
+      <h1>Cadastre-se</h1>
+      <RegisterForms />
       <Wall></Wall>
       <p>
-        Não possui uma conta?{" "}
-        <Link to={"/register"}>
-          <span> Cadastre-se </span>
+        Já possui uma conta?{" "}
+        <Link to={"/login"}>
+          <span> Faça login </span>
         </Link>
       </p>
     </Main>
@@ -33,7 +33,7 @@ const Main = styled.main`
   align-items: center;
   background: #f9fafb;
   padding-bottom: 100px;
-  svg {
+  .back {
     position: absolute;
     left: 20px;
     top: 20px;
