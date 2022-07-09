@@ -11,6 +11,7 @@ import {
   SideBarHeader,
 } from "./StyledComponentHeader";
 import SideBarContent from "./SideBarContent";
+import {Link} from "react-router-dom";
 
 const spring = {
   type: "spring",
@@ -50,11 +51,13 @@ export default function Header() {
             <p>Entra na sua conta para ver suas compras, favoritos etc.</p>
           </div>
           <div className="buttonBox">
-            <div className="enterButton">Entre</div>
+            <Link to={'/login'}>
+              <div className="enterButton">Entre</div>
+            </Link>
             <div className="registerButton">Crie sua conta</div>
           </div>
         </SideBarHeader>
-        <SideBarContent/>
+        <SideBarContent />
       </SideBar>
       <div
         className={`overlay ${!side ? "hidden" : ""}`}
