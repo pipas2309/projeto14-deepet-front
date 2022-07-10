@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import React from "react";
 import Header from "../Components/Header";
+import Banners from "../Components/Banners";
 
 export default function LandingPage() {
   return (
     <Main>
       <Header/>
-      {/* <Banners /> */}
+      <Banners />
       {/* <Offers /> */}
       {/* <BestSellers /> */}
       {/* <Department /> */}
@@ -18,4 +19,5 @@ const Main = styled.main`
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
 `;
