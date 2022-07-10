@@ -57,7 +57,7 @@ export default function Header() {
               <AiOutlineUser />
             </div>
             <h3>Bem-vindo</h3>
-            <p>Entra na sua conta para ver suas compras, favoritos etc.</p>
+            <p>Entra na sua conta para ver suas compras, pedidos, etc...</p>
           </div>
           <div className="buttonBox">
             <Link to={'/login'}>
