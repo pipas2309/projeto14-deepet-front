@@ -1,36 +1,27 @@
 import Carousel from "react-bootstrap/Carousel";
-import React from "react";
-import { AiOutlineMenu, AiOutlineSearch, AiOutlineUser, AiOutlineCloseCircle } from "react-icons/ai";
+//import React from "react";
 import { useState } from "react";
-import Banner1  from '../imgs/banner1.gif';
+import Banner1  from '../imgs/banner1.png';
 import Banner2 from '../imgs/banner2.png';
-import Banner3 from '../imgs/banner3.webp';
+import Banner3 from '../imgs/banner3.png';
 import Banner4 from '../imgs/banner4.png';
-import {
-  Head,
-  HeaderBox,
-  SearchForm,
-  SideBar,
-  SideBarHeader,
-  Theme
-} from "./StyledComponentBanners";
-import {Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+//import {Link} from "react-router-dom";
 
-const spring = {
-  type: "spring",
-  stiffness: 700,
-  damping: 30,
-};
 
 export default function Banners() {
 
     const [index, setIndex] = useState(0);
     
     const handleSelect = (selectedIndex) => setIndex(selectedIndex)
+
+    const navigate = useNavigate();
+
+    const handleOnClick = () => navigate("/login")
     
     return (
         <Carousel activeIndex={index} onSelect={handleSelect}>
-            <Carousel.Item onClick={(e) => console.log('banner 1')}>
+            <Carousel.Item onClick={handleOnClick}>
                 <img
                 className="d-block w-100"
                 src={Banner1}
@@ -63,7 +54,5 @@ export default function Banners() {
                 />    
             </Carousel.Item>
         </Carousel>
-    );
-      
-
+    );    
 }

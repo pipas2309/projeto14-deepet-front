@@ -6,22 +6,24 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
 
+
 export default function LoginPage() {
   const navigate = useNavigate();
+    
   return (
-    <Main>
-      <IoChevronBackCircleOutline onClick={() => navigate(-1)} />
-      <img src={Logo} alt="Logo" />
-      <h1>Entre na deepet</h1>
-      <LoginForms />
-      <Wall></Wall>
-      <p>
-        Não possui uma conta?{" "}
-        <Link to={"/register"}>
-          <span> Cadastre-se </span>
-        </Link>
-      </p>
-    </Main>
+      <Main>
+        <IoChevronBackCircleOutline onClick={() => navigate(-1)} />
+        <img src={Logo} alt="Logo" />
+        <h1>Entre na deepet</h1>
+        <LoginForms />
+        <Wall></Wall>
+        <p>
+          Não possui uma conta?{" "}
+          <Link to={"/register"}>
+            <span> Cadastre-se </span>
+          </Link>
+        </p>
+      </Main>
   );
 }
 

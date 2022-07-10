@@ -195,7 +195,6 @@ export const SideBarHeader = styled.div`
 
 export const Theme = styled.p`
   width: 36px;
-  margin-left: 5px;
+  margin: auto 0 auto 5px;
   color: ${props => props.inputColor ? "#fff" : "#000"};
-  
 `;
