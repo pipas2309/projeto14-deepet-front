@@ -4,7 +4,7 @@ export const Head = styled.header`
   width: 100%;
   display: flex;
   height: 100%;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   .switch {
     width: 50px;
@@ -37,6 +37,11 @@ export const Head = styled.header`
     height: 20px;
     margin: 15px 0px;
   }
+  &:focus {
+    img {
+      visibility: hidden;
+    }
+  }
 `;
 
 export const HeaderBox = styled.div`
@@ -44,8 +49,9 @@ export const HeaderBox = styled.div`
   height: 48px;
   background-color: #fff159;
   .logo {
-    width: 79px;
-    height: 90%;
+    width: 40px;
+    height: auto;
+    margin: 0 5px;
   }
   .overlay {
     background-color: rgba(0, 0, 0, 0.5);
@@ -66,7 +72,8 @@ export const HeaderBox = styled.div`
 
 export const SearchForm = styled.form`
   height: 32px;
-  width: 75%;
+  transition: 0.3s;
+  width: 47%;
   margin: 8px 0px;
   display: flex;
   justify-content: center;
@@ -74,12 +81,20 @@ export const SearchForm = styled.form`
   background-color: #ffffff;
   border-radius: 2px;
   box-shadow: 7px 0px 7px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s;
+
   input {
     color: #333;
     border: none;
-    width: 90%;
+    width: 100%;
     font-size: 16px;
+    margin: 0 -10px;
+
+    &:focus-within {
+      height: 35px;
+    }
   }
+
   button {
     display: flex;
     justify-content: center;
@@ -92,6 +107,20 @@ export const SearchForm = styled.form`
       width: 30px;
       height: 30px;
       color: gray;
+    }
+    :nth-child(3) {
+      visibility: hidden;
+    }
+    
+  }  
+  &:focus-within {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 48px;
+    transition: 0.2s;
+    button {
+      visibility: visible;
     }
   }
 `;
@@ -162,4 +191,11 @@ export const SideBarHeader = styled.div`
     display:block;
     justify-content:space-between;
   }
+`;
+
+export const Theme = styled.p`
+  width: 36px;
+  margin-left: 5px;
+  color: ${props => props.inputColor ? "#fff" : "#000"};
+  
 `;

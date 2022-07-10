@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../imgs/Logo.png";
-import { AiOutlineMenu, AiOutlineSearch, AiOutlineUser } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineSearch, AiOutlineUser, AiOutlineCloseCircle } from "react-icons/ai";
 import { motion } from "framer-motion/dist/es/index";
 import { useState } from "react";
 import {
@@ -9,6 +9,7 @@ import {
   SearchForm,
   SideBar,
   SideBarHeader,
+  Theme
 } from "./StyledComponentHeader";
 import SideBarContent from "./SideBarContent";
 import {Link} from "react-router-dom";
@@ -31,14 +32,22 @@ export default function Header() {
       <Head>
         <img src={Logo} alt="logo" className="logo" />
         <SearchForm>
-          <button>
+          <button type="submit">
             <AiOutlineSearch />
           </button>
           <input type="text" placeholder="Estou buscando..." />
+          <button type="reset" id="reset" onClick={
+            () => document.getElementById("reset").blur()
+            /* Não sei fazer de uma forma melhor */ 
+            }>
+            <AiOutlineCloseCircle />
+          </button>
         </SearchForm>
         <div className="switch" data-isOn={isOn} onClick={toggleSwitch}>
           <motion.div className="handle" layout transition={spring} />
+          
         </div>
+        <Theme inputColor={isOn}>{isOn ? "Dark" : "Light"}</Theme>
         <AiOutlineMenu onClick={toggleSide} />
       </Head>
       <SideBar className="menu" right={side ? "0" : "-80%"}>
@@ -48,7 +57,7 @@ export default function Header() {
               <AiOutlineUser />
             </div>
             <h3>Bem-vindo</h3>
-            <p>Entra na sua conta para ver suas compras, favoritos etc.</p>
+            <p>Entra na sua conta para ver suas compras, pedidos, etc...</p>
           </div>
           <div className="buttonBox">
             <Link to={'/login'}>

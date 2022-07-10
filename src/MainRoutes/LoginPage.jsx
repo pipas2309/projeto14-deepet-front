@@ -42,7 +42,7 @@ const Main = styled.main`
   }
   img {
     width: 170px;
-    height: 120px;
+    height: auto;
     margin-top: 50px;
     margin-bottom: 100px;
   }

@@ -6,6 +6,10 @@ export default function LandingPage() {
   return (
     <Main>
       <Header/>
+      {/* <Banners /> */}
+      {/* <Offers /> */}
+      {/* <BestSellers /> */}
+      {/* <Department /> */}
     </Main>
   );
 }
