@@ -2,19 +2,10 @@ import styled from "styled-components";
 
 export const FooterBox = styled.footer`
   width: 100%;
-  height: 320px;
+  height: 350px;
   background-color: #fff159;
   border-bottom: 120px solid #fff159;
 `;
-
-export const Foot = styled.div`
-  width: 100%;
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
-  align-items: center;
-`;
-
 
 export const Socials = styled.div`
 font-size: 40px;
@@ -32,6 +23,10 @@ svg {
 p {
   font-size: 12px;
   margin: 5px 10px;
+}
+em {
+  font-size: 18px;
+  text-decoration: underline;
 }
 `;
 
