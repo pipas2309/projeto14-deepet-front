@@ -1,7 +1,7 @@
 import racao from '../imgs/racao.webp'
 import { AllOffers, ProductContent, Title } from "./StyledComponentOffers";
 
-export default function Offers() {
+export default function BestSellers() {
 
     const listaDeProdutos = [
         {
@@ -120,26 +120,24 @@ export default function Offers() {
 
     return (
         <>
-            <Title>Grandes ofertas</Title>
+            <Title>Os mais vendidos</Title>
             <AllOffers>
-                    {listaDeProdutos.map((item, index) => <Offer key={index} name={item.name} image={item.images[0]} price={item.price} off={item.off}/>)}
+                    {listaDeProdutos.map((item, index) => <BestSeller key={index} name={item.name} image={item.images[0]} price={item.price} off={item.off}/>)}
             </AllOffers>
         </>
     );    
 
 }
 
-function Offer({name, image, price, off}) {
+function BestSeller({name, image, price, off}) {
     const brl = new Intl.NumberFormat("pt-BR", {style: "currency", "currency":"BRL"}).format(Number(price));
 
     return (
-
             <ProductContent>
                 <img src={image} alt={name}/>
                 <h2>{name}</h2>
                 <p>{brl}</p>
                 <h4>{`${off}% OFF`}</h4>
             </ProductContent>
-
     )
 }

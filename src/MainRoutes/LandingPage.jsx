@@ -3,6 +3,8 @@ import React from "react";
 import Header from "../Components/Header";
 import Banners from "../Components/Banners";
 import Offers from "../Components/Offers";
+import Department from "../Components/Department";
+import BestSellers from "../Components/BestSellers";
 
 export default function LandingPage() {
   return (
@@ -10,8 +12,8 @@ export default function LandingPage() {
       <Header/>
       <Banners />
       <Offers />
-      {/* <BestSellers /> */}
-      {/* <Department /> */}
+      <BestSellers />
+      <Department />
     </Main>
   );
 }

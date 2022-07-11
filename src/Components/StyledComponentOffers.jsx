@@ -7,6 +7,7 @@ display: flex;
 flex-direction: row;
 flex-wrap: nowrap;
 overflow-x: scroll;
+padding: 0;
 
 -ms-overflow-style: none; /* for Internet Explorer, Edge */
 scrollbar-width: none; /* for Firefox */
@@ -55,11 +56,13 @@ h2 {
 p {
     width: 100%;
     max-height: 25px;
-    font-size: 20px;
+    font-size: 23px;
     text-overflow: clip;
     white-space: normal;
     overflow: hidden;
     margin-bottom: 5px;
+    color: #007dc5;
+    font-weight: 700;
 }
 
 h4 {
@@ -70,5 +73,11 @@ h4 {
     white-space: normal;
     overflow: hidden;
     margin-bottom: 2px;
+    color: #007dc5;
 }
+`;
+
+export const Title = styled.p`
+    font-size: 32px;
+    margin: 10px auto 10px auto;
 `;
