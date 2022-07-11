@@ -8,6 +8,7 @@ import UserPage from "./MainRoutes/UserPage";
 import ProductPage from "./MainRoutes/ProductPage";
 import Cart from "./MainRoutes/Cart"
 import Orders from "./Components/Orders";
+import PostProducts from "./Components/PostProducts";
 
 export default function App() {
 
@@ -22,7 +23,8 @@ export default function App() {
         <Route path="/account" element={<UserPage />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/orders" element={<Orders />} />
-        <Route path= "/cart" element = {<Cart />} />
+        <Route path="/cart" element = {<Cart />} />
+        <Route path="/post/products" element={<PostProducts />} />
       </Routes>
     </BrowserRouter>
   );
