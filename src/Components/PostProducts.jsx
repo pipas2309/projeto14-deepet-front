@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React from "react";
-import { useRef, useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -20,9 +20,6 @@ export default function PostProducts() {
   const [review, setReview] = useState(0);
   const [off, setOff] = useState(0);
   
-
-  const [errMsg, setErrMsg] = useState("");
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -46,11 +43,11 @@ export default function PostProducts() {
 
     } catch (err) {
       if (!err?.response) {
-        setErrMsg("Sem resposta do servidor");
-      } else if (err.response?.status === 409) {
-        setErrMsg("Usuário cadastrado / Email Cadastrado");
+        alert("Sem resposta do servidor");
+      } else if (err.response?.status === 511) {
+        alert("Falha na autorização");
       } else {
-        setErrMsg("Falha no registro");
+        alert("Falha no registro");
       }
 
     }
