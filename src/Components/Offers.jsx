@@ -1,6 +1,3 @@
-//import React from "react";
-import styled from "styled-components";
-//import {Link} from "react-router-dom";
 import racao from '../imgs/racao.webp'
 import { AllOffers, ProductContent } from "./StyledComponentOffers";
 
@@ -130,7 +127,7 @@ export default function Offers() {
 
 }
 
-export function Offer({name, image, price, off}) {
+function Offer({name, image, price, off}) {
     const brl = new Intl.NumberFormat("pt-BR", {style: "currency", "currency":"BRL"}).format(Number(price));
 
     return (
