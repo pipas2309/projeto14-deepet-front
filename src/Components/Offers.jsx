@@ -125,21 +125,18 @@ export default function Offers() {
                     {listaDeProdutos.map((item, index) => <Offer key={index} name={item.name} image={item.images[0]} price={item.price} off={item.off}/>)}
             </AllOffers>
         </>
-    );    
-
+    );
 }
 
 function Offer({name, image, price, off}) {
     const brl = new Intl.NumberFormat("pt-BR", {style: "currency", "currency":"BRL"}).format(Number(price));
 
     return (
-
             <ProductContent>
                 <img src={image} alt={name}/>
                 <h2>{name}</h2>
                 <p>{brl}</p>
                 <h4>{`${off}% OFF`}</h4>
             </ProductContent>
-
-    )
+    );
 }
