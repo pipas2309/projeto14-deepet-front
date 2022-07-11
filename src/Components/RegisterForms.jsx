@@ -77,9 +77,9 @@ export default function RegisterForms() {
       setErrMsg("E-mail inválido, insira um e-mail válido");
     }
     try {
-      const postObj = { name:user, email, password: pwd };
+      const postObj = { name:user, email, password: pwd , confirmPassword:matchPwd };
       const response = await axios.post(
-        "http://localhost:5000/auth/sign-up",
+        "https://deepet-back.herokuapp.com/auth/sign-up",
         postObj
       );
       setUser("");
