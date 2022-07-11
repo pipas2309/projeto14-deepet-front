@@ -5,6 +5,7 @@ import LoginPage from "./MainRoutes/LoginPage";
 import RegisterPage from "./MainRoutes/RegisterPage";
 import ProductPage from "./MainRoutes/ProductPage";
 import Cart from "./MainRoutes/Cart"
+import PaymentPage from "./MainRoutes/PaymentPage";
 
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/product/:id" element={<ProductPage />} />
             <Route path= "/cart" element = {<Cart />} />
+            <Route path="/payment" element = {<PaymentPage/>} />
           </Routes>
         </BrowserRouter>
   );
