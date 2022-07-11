@@ -9,6 +9,7 @@ import ProductPage from "./MainRoutes/ProductPage";
 import Cart from "./MainRoutes/Cart";
 import PaymentPage from "./MainRoutes/PaymentPage";
 import Orders from "./Components/Orders";
+import PostProducts from "./Components/PostProducts";
 
 export default function App() {
 
@@ -23,7 +24,8 @@ export default function App() {
         <Route path="/account" element={<UserPage />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/orders" element={<Orders />} />
-        <Route path= "/cart" element = {<Cart />} />
+        <Route path="/cart" element = {<Cart />} />
+        <Route path="/post/products" element={<PostProducts />} />
         <Route path="/payment" element = {<PaymentPage/>} />
       </Routes>
     </BrowserRouter>

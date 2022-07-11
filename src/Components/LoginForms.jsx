@@ -25,7 +25,7 @@ export default function LoginForms() {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/auth/sign-in", {
+      const response = await axios.post("https://deepet-back.herokuapp.com/auth/sign-in", {
         email,
         password: pwd,
       });
