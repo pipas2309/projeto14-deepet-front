@@ -12,7 +12,7 @@ import {
   Theme
 } from "./StyledComponentHeader";
 import SideBarContent from "./SideBarContent";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const spring = {
   type: "spring",
@@ -23,19 +23,32 @@ const spring = {
 export default function Header() {
   const [isOn, setIsOn] = useState(false);
   const [side, setSide] = useState(false);
+  const [wordSearch, setWordSearch] = useState('');
 
   const toggleSwitch = () => setIsOn(!isOn);
 
   const toggleSide = () => setSide(!side);
+
+  const navigate = useNavigate();
+
+  function searching(e) {
+    e.preventDefault();
+    if(wordSearch === '') return;
+    setWordSearch('');
+    navigate(`/products/${wordSearch}`)
+  }
+    
   return (
     <HeaderBox>
       <Head>
-        <img src={Logo} alt="logo" className="logo" />
-        <SearchForm>
+        <Link to={'/'}>
+          <img src={Logo} alt="logo" className="logo" />
+        </Link>
+        <SearchForm onSubmit={(e) => searching(e)}>
           <button type="submit">
             <AiOutlineSearch />
           </button>
-          <input type="text" placeholder="Estou buscando..." />
+          <input type="text" placeholder="Estou buscando..." onChange={(e) => setWordSearch(e.target.value)} value={wordSearch} />
           <button type="reset" >
             <AiOutlineCloseCircle />
           </button>

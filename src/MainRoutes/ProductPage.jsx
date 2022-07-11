@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import React from "react";
 import { ProductCarousel, Footer } from "../Components/ProductComponents";
 import Header from "../Components/Header";
@@ -9,6 +8,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios"
+import GeneralFooter from "../Components/Footer"
 
 export default function ProductPage() {
   const {id} = useParams();
@@ -73,6 +73,7 @@ export default function ProductPage() {
           pois levamos entre 14 a 250 dias úteis para a entrega.
         </Description>
       </Main>
+      <GeneralFooter />
       <Footer />
     </>
   );

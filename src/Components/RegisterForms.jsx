@@ -216,7 +216,7 @@ const Forms = styled.form`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 44px;
+  margin-top: 40px;
   input {
     width: 88%;
     height: 64px;
