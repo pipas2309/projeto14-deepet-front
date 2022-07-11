@@ -21,6 +21,7 @@ export default function App() {
             <Route path="/products/:filter" element={<SearchPage />} />
             <Route path="/account" element={<UserPage />} />
             <Route path="/product/:id" element={<ProductPage />} />
+            <Route path="/orders" element={<ProductPage />} />
           </Routes>
         </BrowserRouter>
   );
