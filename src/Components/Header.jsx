@@ -33,6 +33,7 @@ export default function Header() {
 
   function searching(e) {
     e.preventDefault();
+    console.log(wordSearch)
     setWordSearch('');
     navigate(`/products/${wordSearch}`)
   }
@@ -45,7 +46,7 @@ export default function Header() {
           <button type="submit">
             <AiOutlineSearch />
           </button>
-          <input type="text" placeholder="Estou buscando..." />
+          <input type="text" placeholder="Estou buscando..." onChange={(e) => setWordSearch(e.target.value)} value={wordSearch} />
           <button type="reset" >
             <AiOutlineCloseCircle />
           </button>

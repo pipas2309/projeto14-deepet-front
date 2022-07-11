@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import React from "react";
 import { ProductCarousel, Footer } from "../Components/ProductComponents";
 import Header from "../Components/Header";
