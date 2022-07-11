@@ -5,6 +5,7 @@ import Banners from "../Components/Banners";
 import Offers from "../Components/Offers";
 import Department from "../Components/Department";
 import BestSellers from "../Components/BestSellers";
+import Footer from "../Components/Footer";
 
 export default function LandingPage() {
   return (
@@ -14,6 +15,7 @@ export default function LandingPage() {
       <Offers />
       <BestSellers />
       <Department />
+      <Footer />
     </Main>
   );
 }

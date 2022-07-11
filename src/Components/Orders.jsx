@@ -5,7 +5,6 @@ import Accordion from "react-bootstrap/Accordion";
 import { Title } from "./StyledComponentOrders";
 import Table from "react-bootstrap/Table";
 
-
 export default function Orders() {
 
     const user = {
@@ -68,7 +67,7 @@ export default function Orders() {
                     </Table>
                 </Accordion.Body>
             </Accordion.Item>)})}
-            </Accordion>        
+            </Accordion>      
         </Main>
     );
 }

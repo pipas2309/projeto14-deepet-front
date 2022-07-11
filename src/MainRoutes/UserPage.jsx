@@ -2,6 +2,7 @@ import styled from "styled-components";
 import React from "react";
 import Header from "../Components/Header";
 import UserContainer from "../Components/UserContainer";
+import Footer from "../Components/Footer";
 
 
 export default function UserPage() {
@@ -33,6 +34,7 @@ export default function UserPage() {
         <Main>
             <Header/>
             <UserContainer user={user}/>
+            <Footer/>
         </Main>
     );
 }

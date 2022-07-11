@@ -4,6 +4,7 @@ import Header from "../Components/Header";
 import StarRatings from "react-star-ratings";
 import { Main, Price, Shipping, Description } from "../Components/StyledComponentsProduct";
 import { TbTruckDelivery } from "react-icons/tb";
+import GeneralFooter from "../Components/Footer"
 
 export default function ProductPage() {
   const rating = 5;
@@ -40,6 +41,7 @@ export default function ProductPage() {
           pois levamos entre 14 a 250 dias úteis para a entrega.
         </Description>
       </Main>
+      <GeneralFooter />
       <Footer />
     </>
   );
