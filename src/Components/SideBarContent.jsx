@@ -5,6 +5,7 @@ import {TbDogBowl , TbBone} from "react-icons/tb"
 import {AiFillMedicineBox , AiOutlineShoppingCart , AiOutlineHistory} from "react-icons/ai"
 import {FaToiletPaper} from "react-icons/fa"
 import {BsPersonSquare , BsHeadset} from "react-icons/bs"
+import { Link } from "react-router-dom";
 
 export default function SideBarContent(){
     return(
@@ -18,10 +19,18 @@ export default function SideBarContent(){
                 <ul><GiSpikedCollar/>Roupas e acessórios</ul>
             </SideBox>
             <SideBox>
-                <ul><AiOutlineShoppingCart/>Carrinho</ul>
-                <ul><BsPersonSquare/>Minha Conta</ul>
-                <ul><BsHeadset/>SAC</ul>
-                <ul><AiOutlineHistory/>Meus pedidos</ul>
+                <Link to={"/cart"}>
+                    <ul><AiOutlineShoppingCart/>Carrinho</ul>
+                </Link>
+                <Link to={"/account"}>
+                    <ul><BsPersonSquare/>Minha Conta</ul>
+                </Link>
+                <Link to={"/account"}>
+                    <ul><BsHeadset/>SAC</ul>
+                </Link>
+                <Link to={"/orders"}>
+                    <ul><AiOutlineHistory/>Meus pedidos</ul>
+                </Link>
             </SideBox>
         </ div>
     )

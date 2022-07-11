@@ -44,7 +44,7 @@ const Main = styled.main`
     width: 170px;
     height: auto;
     margin-top: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 38px;
   }
   h1 {
     width: 158px;
