@@ -6,7 +6,8 @@ import RegisterPage from "./MainRoutes/RegisterPage";
 import SearchPage from "./MainRoutes/SearchPage";
 import UserPage from "./MainRoutes/UserPage";
 import ProductPage from "./MainRoutes/ProductPage";
-import Cart from "./MainRoutes/Cart"
+import Cart from "./MainRoutes/Cart";
+import PaymentPage from "./MainRoutes/PaymentPage";
 import Orders from "./Components/Orders";
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/orders" element={<Orders />} />
         <Route path= "/cart" element = {<Cart />} />
+        <Route path="/payment" element = {<PaymentPage/>} />
       </Routes>
     </BrowserRouter>
   );
