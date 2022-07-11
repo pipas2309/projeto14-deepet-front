@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import React from "react";
 import { useRef, useState, useEffect } from "react";
-import {FaInfoCircle} from "react-icons/fa";
+import { FaInfoCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import axios from "axios"
+import axios from "axios";
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
-const EMAIL_REGEX =
-  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const EMAIL_REGEX = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
 
 export default function RegisterForms() {
   const userRef = useRef();
@@ -44,7 +43,7 @@ export default function RegisterForms() {
 
   useEffect(() => {
     setValidEmail(EMAIL_REGEX.test(email));
-  }, [user]);
+  }, [email]);
 
   useEffect(() => {
     setValidPwd(PWD_REGEX.test(pwd));
@@ -53,7 +52,7 @@ export default function RegisterForms() {
 
   useEffect(() => {
     setErrMsg("");
-  }, [user,email, pwd, matchPwd]);
+  }, [user, email, pwd, matchPwd]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -78,15 +77,15 @@ export default function RegisterForms() {
       setErrMsg("E-mail inválido, insira um e-mail válido");
     }
     try {
-      const postObj={ user, email, pwd }
+      const postObj = { name:user, email, password: pwd };
       const response = await axios.post(
-        "https://mywalletlivison.herokuapp.com/auth/sign-up",
+        "http://localhost:5000/auth/sign-up",
         postObj
       );
       setUser("");
       setPwd("");
       setMatchPwd("");
-      navigate("/");
+      navigate("/login");
     } catch (err) {
       if (!err?.response) {
         setErrMsg("Sem resposta do servidor");
@@ -101,13 +100,13 @@ export default function RegisterForms() {
 
   return (
     <Forms onSubmit={handleSubmit}>
-      {/* <h2
+      <h2
         ref={errRef}
         className={errMsg ? "errmsg" : "offscreen"}
         aria-live="assertive"
       >
         {errMsg}
-      </h2> */}
+      </h2>
       <input
         type="text"
         id="username"
@@ -120,7 +119,7 @@ export default function RegisterForms() {
         aria-describedby="uidnote"
         onFocus={() => setUserFocus(true)}
         onBlur={() => setUserFocus(false)}
-        placeholder = "Nome"
+        placeholder="Nome"
       />
       <h4
         id="uidnote"
@@ -128,7 +127,7 @@ export default function RegisterForms() {
           userFocus && user && !validName ? "instructions" : "offscreen"
         }
       >
-        <FaInfoCircle/>
+        <FaInfoCircle />
         4 a 24 caracteres.
         <br />
         Deve começar com uma letra.
@@ -146,7 +145,7 @@ export default function RegisterForms() {
         aria-describedby="emailnote"
         onFocus={() => setEmailFocus(true)}
         onBlur={() => setEmailFocus(false)}
-        placeholder = "E-mail"
+        placeholder="E-mail"
       />
       <h4
         id="emailnote"
@@ -154,8 +153,10 @@ export default function RegisterForms() {
           emailFocus && email && !validEmail ? "instructions" : "offscreen"
         }
       >
-        <FaInfoCircle/>
+        <FaInfoCircle />
         Deve ser um e-mail válido.
+        Deve ter 2 dominios.
+        Ex: example@example.com.br
       </h4>
       <input
         type="password"
@@ -167,13 +168,13 @@ export default function RegisterForms() {
         aria-describedby="pwdnote"
         onFocus={() => setPwdFocus(true)}
         onBlur={() => setPwdFocus(false)}
-        placeholder = "Senha"
+        placeholder="Senha"
       />
       <h4
         id="pwdnote"
         className={pwdFocus && !validPwd ? "instructions" : "offscreen"}
       >
-        <FaInfoCircle/>
+        <FaInfoCircle />
         8 a 24 caracteres.
         <br />
         Deve incluir letras maiúscula e minúscula, um número e um caracter
@@ -190,16 +191,21 @@ export default function RegisterForms() {
         aria-describedby="confirmnote"
         onFocus={() => setMatchFocus(true)}
         onBlur={() => setMatchFocus(false)}
-        placeholder = "Repita a senha"
+        placeholder="Repita a senha"
       />
       <h4
         id="confirmnote"
         className={matchFocus && !validMatch ? "instructions" : "offscreen"}
       >
-        <FaInfoCircle/>
+        <FaInfoCircle />
         Ambas senhas devem ser iguais.
       </h4>
-      <button type="submit" disabled={!validName || !validPwd || !validMatch ? true : false}>{"Cadastrar"}</button>
+      <button
+        type="submit"
+        disabled={!validName || !validPwd || !validMatch ? true : false}
+      >
+        {"Cadastrar"}
+      </button>
     </Forms>
   );
 }
@@ -223,22 +229,22 @@ const Forms = styled.form`
     color: #000000;
     padding-left: 15px;
     margin-bottom: 24px;
-    border:none;
+    border: none;
     ::placeholder {
       font-size: 20px;
       line-height: 23px;
-      color: #A8AFB9;
+      color: #a8afb9;
     }
   }
-  h4{
-    margin-bottom:20px;
-    margin-top:-20px;
+  h4 {
+    margin-bottom: 20px;
+    margin-top: -20px;
   }
   button {
     border: none;
     width: 88%;
     height: 64px;
-    background-color:#5166B7;
+    background-color: #5166b7;
     border-radius: 16px;
     font-weight: 700;
     font-size: 20px;
@@ -246,4 +252,3 @@ const Forms = styled.form`
     color: #ffffff;
   }
 `;
-  

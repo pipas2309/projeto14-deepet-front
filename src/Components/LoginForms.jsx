@@ -24,46 +24,47 @@ export default function LoginForms() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //     try {
-    //       const response = await axios.post(
-    //         "https://mywalletlivison.herokuapp.com/login",
-    //         { email, pwd }
-    //       );
-    //       const accessToken = response?.data?.accessToken;
-    //       const userName = response?.data?.userName;
-    //       const objPost = {userName , accessToken}
-    //       localStorage.setItem("userData",JSON.stringify(objPost) );
-    //       setEmail("");
-    //       setPwd("");
-    //       navigate("/records");
-    //     } catch (err) {
-    //       if (!err?.response) {
-    //         setErrMsg("Sem resposta do servidor");
-    //       }
-    //       if (err.response?.status === 400) {
-    //         setErrMsg("E-mail ou senha incorretos");
-    //       }
-    //       if (err.response?.status === 401) {
-    //         setErrMsg("Não autorizado");
-    //       }
-    //       if (err.response?.status === 404) {
-    //         setErrMsg("Usuário não encontrado");
-    //       } else {
-    //         setErrMsg("Falha no login");
-    //       }
-    //       errRef.current.focus();
-    //     }
+    try {
+      const response = await axios.post("http://localhost:5000/auth/sign-in", {
+        email,
+        password: pwd,
+      });
+      const token = response?.data?.token;
+      const name = response?.data?.name;
+      const time = response?.data?.time;
+      const objPost = { name, token, time };
+      localStorage.setItem("userData", JSON.stringify(objPost));
+      setEmail("");
+      setPwd("");
+      navigate("/");
+    } catch (err) {
+      if (!err?.response) {
+        setErrMsg("Sem resposta do servidor");
+      }
+      if (err.response?.status === 400) {
+        setErrMsg("E-mail ou senha incorretos");
+      }
+      if (err.response?.status === 401) {
+        setErrMsg("Não autorizado");
+      }
+      if (err.response?.status === 404) {
+        setErrMsg("Usuário não encontrado");
+      } else {
+        setErrMsg("Falha no login");
+      }
+      errRef.current.focus();
+    }
   };
 
   return (
     <Forms onSubmit={handleSubmit}>
-      {/* <h2
+      <h2
         ref={errRef}
         className={errMsg ? "errmsg" : "offscreen"}
         aria-live="assertive"
       >
         {errMsg}
-      </h2> */}
+      </h2>
       <input
         type="email"
         id="email"
@@ -108,18 +109,18 @@ const Forms = styled.form`
     color: #000000;
     padding-left: 15px;
     margin-bottom: 24px;
-    border:none;
+    border: none;
     ::placeholder {
       font-size: 20px;
       line-height: 23px;
-      color: #A8AFB9;
+      color: #a8afb9;
     }
   }
   button {
     border: none;
     width: 88%;
     height: 64px;
-    background-color:#5166B7;
+    background-color: #5166b7;
     border-radius: 16px;
     font-weight: 700;
     font-size: 20px;
