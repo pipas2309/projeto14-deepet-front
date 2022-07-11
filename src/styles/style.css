@@ -6,7 +6,8 @@ body {
   box-sizing: border-box;
   background: #ffffff;
 }
-.hidden,.hide {
+.hidden,
+.hide {
   display: none;
 }
 .errmsg {
@@ -19,7 +20,7 @@ body {
   width: 88%;
   font-size: 0.75rem;
   border-radius: 0.5rem;
-  background:#FFF159;
+  background: #fff159;
   color: black;
   padding: 0.25rem;
   position: relative;
@@ -49,7 +50,6 @@ body {
   color: lightgray;
 }
 
-
 aside h3 {
   font-size: 16px;
   font-weight: 700;
@@ -66,34 +66,104 @@ aside p {
   display: block;
 }
 
-ul{
-    text-decoration: none;
-    color: rgb(64, 64, 64);
-    background-color: white;
-    margin-bottom: 1px;
-    min-height: 48px;
-    display: flex;
-    position: relative;
-    padding: 0px 16px;
-    width: 100%;
-    -webkit-box-align: center;
-    align-items: center;
-    flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    gap: 8px 0px;
-    border-radius: 4px;
+ul {
+  text-decoration: none;
+  color: rgb(64, 64, 64);
+  background-color: white;
+  margin-bottom: 1px;
+  min-height: 48px;
+  display: flex;
+  position: relative;
+  padding: 0px 16px;
+  width: 100%;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  gap: 8px 0px;
+  border-radius: 4px;
 }
 
-.sideContainer{
-    padding: 0px 8px;
+.sideContainer {
+  padding: 0px 8px;
 }
 
-ul svg{
-    width: 20px;
-    height: 20px;
+ul svg {
+  width: 20px;
+  height: 20px;
 }
 
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
   outline: none;
+}
+
+footer.fixed  {
+  position: fixed;
+  right: 0px;
+  bottom: -1px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  height: 80px;
+  width: 100vw;
+  box-shadow: 0 -1px 7px rgb(0 0 0 / 50%);
+}
+
+.add-to-cart {
+  border: none;
+  border-radius: 5px;
+  background-color: #25b456;
+  font-size: 4vw;
+  color: #fff;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  width: 52vw !important;
+  justify-content: center;
+}
+
+.cart-footer-info {
+  color: #4f4f4f;
+  display: flex;
+}
+
+.wraper {
+  border: 1px #d5d5d5 solid;
+  width: 40vw;
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.wraper .counter {
+  height: 100%;
+  width: 10% !important;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px !important;
+}
+
+.plusminus {
+  height: 52px;
+  width: 30%;
+  background: white;
+  border: none;
+  font-size: 38px;
+  color: #007dc5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plusminus svg {
+  width: 16px;
+  height: 18px;
 }

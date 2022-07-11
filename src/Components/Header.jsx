@@ -45,11 +45,8 @@ export default function Header() {
           <button type="submit">
             <AiOutlineSearch />
           </button>
-          <input type="text" placeholder="Estou buscando..." onChange={(e) => setWordSearch(e.target.value)} value={wordSearch}/>
-          <button type="reset" id="reset" onClick={
-            () => document.getElementById("reset").blur()
-            /* Não sei fazer de uma forma melhor */ 
-            }>
+          <input type="text" placeholder="Estou buscando..." />
+          <button type="reset" >
             <AiOutlineCloseCircle />
           </button>
         </SearchForm>

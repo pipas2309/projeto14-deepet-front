@@ -5,6 +5,8 @@ import LoginPage from "./MainRoutes/LoginPage";
 import RegisterPage from "./MainRoutes/RegisterPage";
 import SearchPage from "./MainRoutes/SearchPage";
 import UserPage from "./MainRoutes/UserPage";
+import ProductPage from "./MainRoutes/ProductPage";
+
 
 
 export default function App() {
@@ -18,6 +20,7 @@ export default function App() {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/products/:filter" element={<SearchPage />} />
             <Route path="/account" element={<UserPage />} />
+            <Route path="/product/:id" element={<ProductPage />} />
           </Routes>
         </BrowserRouter>
   );
