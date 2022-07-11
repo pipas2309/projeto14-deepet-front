@@ -6,6 +6,7 @@ import RegisterPage from "./MainRoutes/RegisterPage";
 import SearchPage from "./MainRoutes/SearchPage";
 import UserPage from "./MainRoutes/UserPage";
 import ProductPage from "./MainRoutes/ProductPage";
+import Cart from "./MainRoutes/Cart"
 import Orders from "./Components/Orders";
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/account" element={<UserPage />} />
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/orders" element={<Orders />} />
+        <Route path= "/cart" element = {<Cart />} />
       </Routes>
     </BrowserRouter>
   );
