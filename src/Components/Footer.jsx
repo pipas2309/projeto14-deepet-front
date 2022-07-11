@@ -22,8 +22,8 @@ export default function Footer() {
         <p>Voltar ao topo da página</p>
       </GoTop>
       <Socials>
-          <a href="http://www.instagram.com"><BsInstagram />Instagram</a>
-          <a href="http://www.facebook.com"><BsFacebook />FaceBook</a>
+          <a href="http://www.instagram.com" target="_blank" rel="noreferrer"><BsInstagram />Instagram</a>
+          <a href="http://www.facebook.com" target="_blank" rel="noreferrer"><BsFacebook />FaceBook</a>
           <p>Preços e condições de pagamento exclusivos para compras via internet, podendo variar nas lojas físicas. Ofertas válidas na compra de até 10 peças de cada produto por cliente, até o término dos nossos estoques para internet. Caso os produtos apresentem divergências de valores, o preço válido é o da sacola de compras. Vendas sujeitas a análise e confirmação de dados.</p>
       </Socials>
     </FooterBox>

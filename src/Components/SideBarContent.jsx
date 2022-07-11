@@ -19,12 +19,18 @@ export default function SideBarContent(){
                 <ul><GiSpikedCollar/>Roupas e acessórios</ul>
             </SideBox>
             <SideBox>
-                <ul><AiOutlineShoppingCart/>Carrinho</ul>
-                <Link to={"/account"}>
-                <ul><BsPersonSquare/>Minha Conta</ul>
+                <Link to={"/cart"}>
+                    <ul><AiOutlineShoppingCart/>Carrinho</ul>
                 </Link>
-                <ul><BsHeadset/>SAC</ul>
-                <ul><AiOutlineHistory/>Meus pedidos</ul>
+                <Link to={"/account"}>
+                    <ul><BsPersonSquare/>Minha Conta</ul>
+                </Link>
+                <Link to={"/account"}>
+                    <ul><BsHeadset/>SAC</ul>
+                </Link>
+                <Link to={"/orders"}>
+                    <ul><AiOutlineHistory/>Meus pedidos</ul>
+                </Link>
             </SideBox>
         </ div>
     )

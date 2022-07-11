@@ -33,7 +33,7 @@ export default function Header() {
 
   function searching(e) {
     e.preventDefault();
-    console.log(wordSearch)
+    if(wordSearch === '') return;
     setWordSearch('');
     navigate(`/products/${wordSearch}`)
   }
@@ -41,7 +41,9 @@ export default function Header() {
   return (
     <HeaderBox>
       <Head>
-        <img src={Logo} alt="logo" className="logo" />
+        <Link to={'/'}>
+          <img src={Logo} alt="logo" className="logo" />
+        </Link>
         <SearchForm onSubmit={(e) => searching(e)}>
           <button type="submit">
             <AiOutlineSearch />
